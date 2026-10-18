@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Ananya! 💕 | The One With Ani's Special Day</title>
+  <meta name="description" content="A magical 3D Friends-themed birthday surprise created with love for Ananya.">
+  
+  <!-- Google Fonts (Modern Calligraphy & Luxury Scripts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Parisienne&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas for floating magical particles & hearts -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Luminous Celestial Viewport Frame (Shiny Screen Boundary) -->
+  <div class="celestial-viewport-border" aria-hidden="true">
+    <div class="border-edge border-top"></div>
+    <div class="border-edge border-bottom"></div>
+    <div class="border-edge border-left"></div>
+    <div class="border-edge border-right"></div>
+    <div class="border-inner-frame"></div>
+    <div class="corner-bracket br-tl"></div>
+    <div class="corner-bracket br-tr"></div>
+    <div class="corner-bracket br-bl"></div>
+    <div class="corner-bracket br-br"></div>
+    <span class="corner-star c-tl">✦</span>
+    <span class="corner-star c-tr">✦</span>
+    <span class="corner-star c-bl">✦</span>
+    <span class="corner-star c-br">✦</span>
+  </div>
+
+  <!-- Top Floating Music & Control Bar -->
+  <div class="top-nav-bar">
+    
+    <div class="sound-controls">
+      <button id="music-btn" class="icon-btn celestial-btn" title="Toggle Birthday Melody" aria-label="Toggle Birthday Melody">
+        <span class="music-icon">🎵</span>
+        <span class="music-label">Birthday Melody</span>
+        <div class="equalizer-waves" id="eq-waves">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </button>
+      <button id="sparkle-mode-btn" class="icon-btn celestial-btn" title="Extra Starlight Magic">✨ Moonlit Magic</button>
+    </div>
+  </div>
+
+  <!-- SECTION 1: 3D Celestial Moonlit Hero Section -->
+  <section id="intro-section" class="scene-section intro-scene">
+    <div class="intro-container">
+      <!-- 3D Realistic Celestial Moon & Cloud Model Container -->
+      <div class="barbie-wrapper celestial-model-wrapper" id="barbie-wrapper">
+        <div class="barbie-glow moon-aura-glow"></div>
+        <div class="fairy-wings-glow celestial-starlight-glow"></div>
+        
+        <!-- 3D Realistic Crescent Moon & Cloud Model -->
+        <div class="barbie-card celestial-moon-card" id="barbie-card">
+          <!-- 3D Glowing Crescent Moon -->
+          <div class="celestial-crescent-moon">
+            <div class="moon-shimmer-beam"></div>
+            <div class="moon-crater mc1"></div>
+            <div class="moon-crater mc2"></div>
+            <div class="moon-crater mc3"></div>
+            <div class="starlight-sparkle sp1">✦</div>
+            <div class="starlight-sparkle sp2">✦</div>
+            <div class="starlight-sparkle sp3">✨</div>
+          </div>
+
+          <!-- Volumetric 3D Floating Clouds Layer -->
+          <div class="cloud-volumetric cloud-layer-back"></div>
+
+          <!-- Ananya's Real Photo in Floating Starlight Orb -->
+          <div class="celestial-avatar-orb">
+            <img src="assets/ananya_sweater.jpg" alt="Ananya Smiling Radiantly" class="barbie-img celestial-avatar-img" id="barbie-avatar">
+            <div class="orb-halo-ring"></div>
+            <div class="orb-star-crown">👑</div>
+          </div>
+
+          <div class="cloud-volumetric cloud-layer-front"></div>
+          <div class="barbie-badge celestial-badge">Ani's Moonlit Dreamland 🌙✨</div>
+        </div>
+
+        <!-- Animated Celestial Speech Bubble -->
+        <div class="speech-bubble celestial-bubble" id="speech-bubble">
+          <div class="bubble-tail"></div>
+          <p class="bubble-text" id="bubble-text">
+            "Happy Birthday Ananya! 💕 Step into your magical starry world, Ani~"
+          </p>
+        </div>
+      </div>
+
+      <!-- Hero Call to Action -->
+      <div class="intro-content">
+        <div class="friends-title-box">
+          <h1 class="friends-title">
+            <span class="f-letter">T</span><span class="f-dot c-red">•</span>
+            <span class="f-letter">H</span><span class="f-dot c-blue">•</span>
+            <span class="f-letter">E</span><span class="f-dot c-yellow">•</span>
+            <span class="f-space"> </span>
+            <span class="f-letter">O</span><span class="f-dot c-red">•</span>
+            <span class="f-letter">N</span><span class="f-dot c-blue">•</span>
+            <span class="f-letter">E</span><span class="f-dot c-yellow">•</span>
+            <span class="f-space"> </span>
+            <span class="f-letter">W</span><span class="f-dot c-red">•</span>
+            <span class="f-letter">H</span><span class="f-dot c-blue">•</span>
+            <span class="f-letter">E</span><span class="f-dot c-yellow">•</span>
+            <span class="f-letter">R</span><span class="f-dot c-red">•</span>
+            <span class="f-letter">E</span>
+          </h1>
+          <h2 class="sub-hero-title celestial-title">Ananya Turns 20! 🌙✨</h2>
+          <p class="fairyland-subtag celestial-subtag">✨ Step Into Ananya's Moonlit Starry Dreamland ✨</p>
+          <p class="hero-tagline celestial-tagline">"Could she BE any more magical?" ☕🛋️</p>
+        </div>
+
+        <!-- Scroll Down / Unlock Prompt -->
+        <div class="scroll-prompt-box">
+          <p class="scroll-tip">Ready to unlock your magical moonlit surprise?</p>
+          <a href="#lock-section" class="scroll-down-btn celestial-scroll-btn" id="scroll-to-lock">
+            <span>Scroll to Unlock Celestial Gate</span>
+            <div class="bouncing-arrow">↓</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Password Gate (The Friends Purple/Pink Door with Yellow Peephole) -->
+  <section id="lock-section" class="scene-section lock-scene">
+    <div class="lock-container">
+      <div class="door-frame-card celestial-door-card">
+        <!-- Friends Peephole Frame in Shiny Polished 3D Gold -->
+        <div class="peephole-frame shiny-gold-peephole">
+          <div class="peephole-center">
+            <span class="eye-emoji">👁️✨</span>
+          </div>
+        </div>
+
+        <div class="lock-header">
+          <span class="lock-icon-badge celestial-badge-pill">🌙 CELESTIAL VAULT ACCESS</span>
+          <h3>Enter Ani's Secret Birthday Code</h3>
+          <p class="lock-subtext">This galaxy of memories is reserved exclusively for our birthday queen!</p>
+        </div>
+
+        <!-- Password Input Form -->
+        <form id="password-form" class="password-form" onsubmit="return false;">
+          <div class="input-wrapper">
+            <input 
+              type="text" 
+              id="password-input" 
+              class="pwd-input" 
+              placeholder="DD/MM/YYYY" 
+              autocomplete="off"
+              maxlength="10"
+            >
+            <button type="submit" id="unlock-btn" class="unlock-btn">
+              <span>Open Surprise ✨</span>
+            </button>
+          </div>
+
+          <div class="hint-container">
+            <span class="hint-badge">💡 HINT</span>
+            <span class="hint-text">Ani's Birthday Date (DD/MM/YYYY)</span>
+          </div>
+
+          <div id="pwd-feedback" class="pwd-feedback"></div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Main Celebration (Revealed after password) -->
+  <main id="celebration-area" class="celebration-area locked-content">
+    
+    <!-- Celebration Welcome Hero Banner -->
+    <section class="banner-section">
+      <div class="confetti-cannon-burst"></div>
+      <div class="welcome-banner-card">
+        <span class="cheers-badge">🎉 WELCOME TO YOUR DAY, ANI! 🎉</span>
+        <h2 class="celebration-heading">The Ultimate Ananya Celebration</h2>
+        <p class="celebration-desc">
+          Filled with coffee chats, 3D memories, warm cuddles, and endless smiles.
+        </p>
+        <div class="celebration-quick-nav">
+          <a href="#gallery-section" class="nav-chip">📸 3D Memory Lane</a>
+          <a href="#letter-section" class="nav-chip">💌 Heartfelt Letter</a>
+          <a href="#cake-section" class="nav-chip">🎂 Blow The Candle</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3A: 3D Photo Memory Wall with Upload Feature -->
+    <section id="gallery-section" class="scene-section gallery-scene">
+      <div class="section-title-wrap">
+        <span class="section-tag">MEMORIES IN 3D</span>
+        <h2 class="section-title">The One With All The Memories 📸</h2>
+        <p class="section-subtitle">Tilt your mouse or tap to experience these unforgettable moments in 3D!</p>
+      </div>
+
+      <!-- Personalize Note Bar -->
+      <div class="upload-bar memory-control-bar">
+        <button type="button" id="open-note-modal-btn-gallery" class="upload-btn note-btn" title="Personalize your birthday note for Ani">
+          <span class="upload-icon">💌</span>
+          <span>Personalize Ani's Note</span>
+        </button>
+      </div>
+
+      <!-- 3D Gallery Grid with Tilt Effect -->
+      <div class="gallery-3d-grid" id="gallery-grid">
+        <!-- Card 1: Royal Baroque Gold Frame -->
+        <div class="polaroid-3d-card frame-card-baroque" data-tilt>
+          <div class="card-inner frame-vintage-gold">
+            <!-- Ornate Corner Filigrees -->
+            <div class="frame-filigree corner-tl">❧</div>
+            <div class="frame-filigree corner-tr">☙</div>
+            <div class="frame-filigree corner-bl">❧</div>
+            <div class="frame-filigree corner-br">☙</div>
+            <div class="frame-top-badge royal-badge">👑 Royal Elegance</div>
+            
+            <div class="photo-frame">
+              <img src="assets/ananya_traditional.jpg" alt="Ananya in Traditional Attire" class="polaroid-img" style="object-position: center 25%;">
+              <div class="photo-shine"></div>
+              
+              <!-- Quick Action Toolbar -->
+              <div class="frame-action-bar">
+                <button type="button" class="frame-action-btn zoom-frame-btn" title="View Zoomed">
+                  <span>🔍 Zoom</span>
+                </button>
+                <button type="button" class="frame-action-btn heart-frame-btn" title="Send Love">
+                  <span>❤️</span> <span class="like-count">168</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Friends Iconic Peephole Frame -->
+        <div class="polaroid-3d-card frame-card-peephole" data-tilt>
+          <div class="card-inner frame-friends-peephole">
+            <!-- Iconic Friends Peephole Crest & Dots -->
+            <div class="peephole-sculpt-header">
+              <div class="friends-dots-mini">
+                <span class="dot d-red"></span>
+                <span class="dot d-blue"></span>
+                <span class="dot d-yellow"></span>
+              </div>
+              <span class="peephole-title">F·R·I·E·N·D·S</span>
+            </div>
+            
+            <div class="photo-frame peephole-photo-cutout">
+              <img src="assets/ananya_event.jpg" alt="Ananya at Developer Event" class="polaroid-img" style="object-position: center 18%;">
+              <div class="photo-shine"></div>
+              
+              <div class="frame-action-bar">
+                <button type="button" class="frame-action-btn zoom-frame-btn" title="View Zoomed">
+                  <span>🔍 Zoom</span>
+                </button>
+                <button type="button" class="frame-action-btn heart-frame-btn" title="Send Love">
+                  <span>❤️</span> <span class="like-count">194</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Fairyland Rose Gold & Glowing Fairy Lights -->
+        <div class="polaroid-3d-card frame-card-fairylights" data-tilt>
+          <div class="card-inner frame-rose-fairylights">
+            <!-- Fluttering 3D Butterfly Pin & Fairy Light Bulbs -->
+            <div class="fairy-butterfly-pin">🦋</div>
+            <div class="frame-top-badge fairy-badge">✨ Pure Sunshine</div>
+            <div class="fairy-lights-string">
+              <span class="f-bulb b-1"></span>
+              <span class="f-bulb b-2"></span>
+              <span class="f-bulb b-3"></span>
+              <span class="f-bulb b-4"></span>
+              <span class="f-bulb b-5"></span>
+              <span class="f-bulb b-6"></span>
+              <span class="f-bulb b-7"></span>
+              <span class="f-bulb b-8"></span>
+            </div>
+            
+            <div class="photo-frame">
+              <img src="assets/ananya_sweater.jpg" alt="Ananya Smiling in Pink Sweater" class="polaroid-img" style="object-position: center 25%;">
+              <div class="photo-shine"></div>
+              
+              <div class="frame-action-bar">
+                <button type="button" class="frame-action-btn zoom-frame-btn" title="View Zoomed">
+                  <span>🔍 Zoom</span>
+                </button>
+                <button type="button" class="frame-action-btn heart-frame-btn" title="Send Love">
+                  <span>❤️</span> <span class="like-count">356</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Holographic Sparkle & Pink Washi Tape Polaroid -->
+        <div class="polaroid-3d-card frame-card-washi" data-tilt>
+          <div class="card-inner frame-washi-polaroid">
+            <!-- Gingham Washi Tape & Metallic Corner Brackets -->
+            <div class="washi-tape-strip"></div>
+            <div class="metal-corner tl"></div>
+            <div class="metal-corner tr"></div>
+            <div class="metal-corner bl"></div>
+            <div class="metal-corner br"></div>
+            
+            <div class="photo-frame">
+              <img src="assets/ananya_camera.jpg" alt="Ananya with Camera" class="polaroid-img" style="object-position: center center;">
+              <div class="photo-shine"></div>
+              
+              <div class="frame-action-bar">
+                <button type="button" class="frame-action-btn zoom-frame-btn" title="View Zoomed">
+                  <span>🔍 Zoom</span>
+                </button>
+                <button type="button" class="frame-action-btn heart-frame-btn" title="Send Love">
+                  <span>❤️</span> <span class="like-count">248</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Pastel Garden Floral & Silk Ribbon Bow -->
+        <div class="polaroid-3d-card frame-card-floral" data-tilt>
+          <div class="card-inner frame-floral-ribbon">
+            <!-- Silk Ribbon Bow & Blossom Badges -->
+            <div class="silk-ribbon-bow">
+              <span class="bow-center">🎀</span>
+            </div>
+            <div class="frame-top-badge floral-badge">🌸 Garden Princess</div>
+            
+            <div class="photo-frame">
+              <img src="assets/ananya_garden.jpg" alt="Ananya in White Garden Dress" class="polaroid-img" style="object-position: center 15%;">
+              <div class="photo-shine"></div>
+              
+              <div class="frame-action-bar">
+                <button type="button" class="frame-action-btn zoom-frame-btn" title="View Zoomed">
+                  <span>🔍 Zoom</span>
+                </button>
+                <button type="button" class="frame-action-btn heart-frame-btn" title="Send Love">
+                  <span>❤️</span> <span class="like-count">285</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Interactive Pop-Up Friendship Letter -->
+    <section id="letter-section" class="scene-section letter-scene">
+      <div class="section-title-wrap">
+        <span class="section-tag">FROM THE HEART</span>
+        <h2 class="section-title">A Special Letter For You, Ani 💌</h2>
+        <p class="section-subtitle">Click the golden wax seal to open your birthday letter</p>
+      </div>
+
+      <div class="envelope-container" id="envelope-container">
+        <!-- 3D Interactive Envelope -->
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+          
+          <!-- The Letter Inside -->
+          <!-- The Letter Inside -->
+          <div class="letter-paper" id="letter-paper">
+            <div class="letter-stamp">👑 ANI</div>
+            <h3 class="letter-heading" id="display-letter-heading">Happy Birthday Ananya! 💕🎉</h3>
+            <div class="letter-body" id="letter-body-content">
+              <p>
+                The first impression when I saw u was... mothamm <strong>POSH BATCH</strong>! Asalu Telugu raadhu anukunna! 😭💅 (Full sophisticated vibes, dialogue delivery zero Telugu anukoni bayapadda haha!)
+              </p>
+              <p>
+                First time I talked with u in that club room... ala rapport build aindi! It was such a good vibe, and frequency motham instant ga set aindi! ☕✨ From awkward hellos to non-stop kaburlu!
+              </p>
+              <p>
+                And plzzzz inkosare <strong>CJP protest</strong> ki maatram velaku ra babu! 💀🚩 Kaavalante <strong>BJP protest</strong> ki veluuuu hehehe! 😭😂 (Chaalu maaku ee revolution stunts!)
+              </p>
+              <p>
+                On a real note though... u have a damn good fashion sense! <strong>Maintain chesaiiiiii dani boiiiiiiiiiii!</strong> 👗🔥 Never stop slaying, keep glowing, and have the most fabulous birthday!
+              </p>
+              <p class="letter-sign" id="display-letter-sign">
+                Forever your bestie & partner-in-crime,<br>
+                <span>"Could you BE any more iconic?!" 🌸💖</span>
+              </p>
+            </div>
+            <div class="letter-actions">
+              <button id="edit-letter-btn" class="cute-btn mini-btn" title="Personalize your letter note">✏️ Personalize Note</button>
+              <button id="close-letter-btn" class="cute-btn mini-btn">Fold Back ✉️</button>
+            </div>
+          </div>
+
+          <div class="envelope-front"></div>
+          <div class="envelope-flap" id="envelope-flap"></div>
+          <div class="wax-seal" id="wax-seal">
+            <span class="seal-text">A</span>
+            <div class="seal-sparkle">✨ Click Me</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Finale - 3D Cake & Blow The Candle -->
+    <section id="cake-section" class="scene-section cake-scene">
+      <div class="section-title-wrap">
+        <span class="section-tag">FINALE MOMENT</span>
+        <h2 class="section-title">Make A Wish & Blow The Candle! 🎂✨</h2>
+        <p class="section-subtitle">Close your eyes, make your deepest wish, and blow out the flames!</p>
+      </div>
+
+      <div class="cake-stage">
+        <!-- 3D Cake Display -->
+        <div class="cake-showcase" id="cake-showcase">
+          <div class="cake-glow-backdrop"></div>
+          <img src="assets/cake.jpg" alt="Dreamy 3D Birthday Cake" class="cake-image" id="cake-img">
+          
+          <!-- Interactive Glowing Candle Flames Layer -->
+          <div class="candles-overlay" id="candles-overlay">
+            <div class="flame flame-1 active-flame"></div>
+            <div class="flame flame-2 active-flame"></div>
+            <div class="flame flame-3 active-flame"></div>
+            <div class="flame flame-4 active-flame"></div>
+            <div class="flame flame-5 active-flame"></div>
+            <div class="flame flame-6 active-flame"></div>
+            <div class="flame flame-7 active-flame"></div>
+          </div>
+
+          <!-- Countdown Overlay for Candle Blow -->
+          <div class="cake-countdown-overlay" id="cake-countdown-overlay">
+            <div class="countdown-pulse-ring"></div>
+            <div class="countdown-circle">
+              <span class="countdown-num" id="countdown-num">3</span>
+            </div>
+            <p class="countdown-tagline" id="countdown-tagline">Make a Wish, Ani! 💖</p>
+          </div>
+
+          <!-- Smoke trails when blown -->
+          <div class="smoke-layer" id="smoke-layer"></div>
+        </div>
+
+        <!-- Blow Controls -->
+        <div class="blow-controls-card">
+          <div class="cake-status-badge" id="cake-status">
+            🔥 The Candles Are Burning Bright!
+          </div>
+
+          <div class="blow-action-buttons">
+            <button id="blow-btn" class="blow-btn primary-blow">
+              <span class="btn-icon">🌬️</span>
+              <span class="btn-text">Make a Wish & Blow!</span>
+            </button>
+
+            <button id="mic-blow-btn" class="blow-btn secondary-blow">
+              <span class="btn-icon">🎙️</span>
+              <span class="btn-text">Blow Into Mic</span>
+            </button>
+
+            <button id="relight-btn" class="blow-btn outline-blow" style="display:none;">
+              <span class="btn-icon">✨</span>
+              <span class="btn-text">Relight Candles</span>
+            </button>
+          </div>
+
+          <div id="mic-status-text" class="mic-status-text"></div>
+        </div>
+      </div>
+
+      <!-- Birthday Celebration Modal / Grand Pop-up Banner -->
+      <div id="celebration-modal" class="celebration-modal">
+        <div class="modal-card">
+          <div class="crown-icon">👑</div>
+          <h2 class="modal-title">🎉 Happy Birthday Ananya! 💖</h2>
+          <p class="modal-message">
+            Your wish has flown up into the stars! May this year bring you all the love, happiness, magic, and success in the universe!
+          </p>
+          <div class="friends-quote-footer">
+            "Because in the episode of our lives, you're the greatest lead character ever." ☕✨
+          </div>
+          <button id="close-modal-btn" class="cute-btn modal-btn">Keep Celebrating 🥳</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="birthday-footer">
+      <div class="footer-dots">
+        <span class="dot d-red"></span>
+        <span class="dot d-blue"></span>
+        <span class="dot d-yellow"></span>
+      </div>
+      <p class="footer-text">
+        Crafted with endless love & laughter for <strong>Ananya (Ani)</strong> 💕
+      </p>
+      <p class="footer-sub">Born on 23rd September 2006 • A True One of a Kind</p>
+    </footer>
+
+  </main>
+
+  <!-- Photo Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <div class="lightbox-content">
+      <img src="" alt="Zoomed Memory" id="lightbox-img">
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Personalize Birthday Note Modal -->
+  <div id="note-modal" class="note-modal">
+    <div class="note-modal-card">
+      <button type="button" class="note-modal-close" id="close-note-modal-btn" aria-label="Close Note Editor">&times;</button>
+      <div class="note-modal-header">
+        <span class="note-modal-badge">💌 SPECIAL BIRTHDAY NOTE</span>
+        <h3 class="note-modal-title">Personalize Your Letter for Ani 💕</h3>
+        <p class="note-modal-desc">Type your personal heartfelt message. It will be placed directly inside the 3D wax-sealed envelope letter!</p>
+      </div>
+
+      <form id="personalize-note-form" class="note-modal-form">
+        <div class="note-form-group">
+          <label for="note-recipient-input" class="note-form-label">Dear / Greeting:</label>
+          <input type="text" id="note-recipient-input" class="note-form-input" placeholder="Dearest Ananya," required>
+        </div>
+
+        <div class="note-form-group">
+          <label for="note-message-input" class="note-form-label">Your Personal Letter & Wishes:</label>
+          <textarea id="note-message-input" class="note-form-textarea" rows="6" placeholder="Write your heartfelt wishes, memories, and personal message here..." required></textarea>
+        </div>
+
+        <div class="note-form-group">
+          <label for="note-signoff-input" class="note-form-label">Sign-off / Best Wishes:</label>
+          <input type="text" id="note-signoff-input" class="note-form-input" placeholder="Forever & Always Your Best Friend," required>
+        </div>
+
+        <div class="note-form-actions">
+          <button type="button" id="reset-note-btn" class="cute-btn mini-btn outline-note-btn">🔄 Reset Default</button>
+          <button type="submit" class="cute-btn save-note-submit-btn">💾 Save Note to Envelope ✨</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
